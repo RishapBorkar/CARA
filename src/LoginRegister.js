@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./LoginRegister.css";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import EmailIcon from "@mui/icons-material/Email";
@@ -6,6 +6,51 @@ import LockIcon from "@mui/icons-material/Lock";
 import PersonIcon from "@mui/icons-material/Person";
 
 function LoginRegister() {
+  useEffect(() => {
+    const wrapper = document.querySelector(".wrapper");
+    const loginLink = document.querySelector(".login_link");
+    const registerLink = document.querySelector(".register_link");
+    const iconClose = document.querySelector(".icon_close");
+    // const registerForm = document.querySelector(".register");
+    // const loginForm = document.querySelector(".login");
+    // const formBox = document.querySelector(".form_box");
+    // formBox.classList.remove("login");
+    // formBox.classList.remove("register");
+
+    function login() {
+      registerLink.addEventListener("click", () => {
+        wrapper.classList.add("active2");
+        // formBox.classList.remove("login");
+        // formBox.classList.add("register");
+      });
+
+      loginLink.addEventListener("click", () => {
+        wrapper.classList.remove("active2");
+        // formBox.classList.remove("register");
+        // formBox.classList.add("login");
+      });
+
+      wrapper.classList.add("active2_popup");
+
+      iconClose.addEventListener("click", () => {
+        wrapper.classList.remove("active2_popup");
+      });
+    }
+
+    // function login2() {
+    //   loginLink.addEventListener("click", () => {
+    //     wrapper.classList.remove("active2");
+    //   });
+
+    //   iconClose.addEventListener("click", () => {
+    //     wrapper.classList.remove("active2_popup");
+    //   })
+    // }
+
+    login();
+    // login2();
+  }, []);
+
   return (
     <div className="wrapper">
       <span className="icon_close">
@@ -87,7 +132,9 @@ function LoginRegister() {
               <input type="checkbox" /> I agree to the terms & conditions
             </label>
           </div>
-          <button type="submit" className="btn">Signup</button>
+          <button type="submit" className="btn">
+            Signup
+          </button>
           <div className="login_register">
             <p>
               Already have an account?
