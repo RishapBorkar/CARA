@@ -1,0 +1,52 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#hero {
+    background-image: url("/public/Images/hero4.png");
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    align-items: center;
+    overflow: visible;
+}
+
+#hero .hero_text h4 {
+    padding-bottom: 15px;
+}
+
+#hero .hero_text h1 {
+    color: #088178;
+}
+
+#hero .hero_text p {
+    font-size: 26px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+#hero .hero_text .hero_button {
+    background-image: url("/public/Images/button.png");
+    background-color: transparent;
+    color: #088178;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+}
